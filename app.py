@@ -27,6 +27,7 @@ class ReusableForm(Form):
            
             
             i=1
+            import numpy as np
             unarray=np.zeros(72)
             while i < 73:
                 if (request.form['at'+str(i)] not in ''):
