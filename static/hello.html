@@ -1,0 +1,184 @@
+<title>Intelligent Tutor System</title>
+        	 	<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+        	 	<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container" style='margin-left: 8em;margin-right: 8em'>
+<img src="/static/Logo.jpg" alt="Logo" width="500">
+<h2>Intelligent Tutor System for archeological sites</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+{% for message in messages %}
+{% if "Error" not in message[1]: %}
+<div class="alert alert-info">
+                {{ message[1] }}</div>
+{% endif %}
+
+{% if "Error" in message[1]: %}
+<div class="alert alert-warning">
+                {{ message[1] }}</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<form action="" method="post" role="form">
+    {{ form.csrf }}
+<div class="form-group" style='margin-left: 8em;margin-right: 8em'>
+    
+<label for="name">Name*:</label> 
+<input type="text" class="form-control" id="name" name="name" placeholder="What's your name?"></div>
+ <label for="surnamename">Surname*:</label>
+<input type="text" class="form-control" id="surname" name="surname" placeholder="What's your surname?"></div>
+    
+<p style='margin-left: 8em;margin-right: 8em'>
+<label for="at1">X</label>
+<input type="text" class="form-control" id="at1" name="at1" placeholder="Insert value"></div>
+<label for="at2">Y</label>
+<input type="text" class="form-control" id="at2" name="at2" placeholder="Insert value"></div>
+<label for="at3">Z</label>
+<input type="text" class="form-control" id="at3" name="at3" placeholder="Insert value"></div>
+<label for="at4">Hueso: {0:'Ca', 1:'T', 2:'Cx', 3:'F', 4:'H', 5:'U', 6:'Fa1', 7:'Mtp', 8:'Mt2', 9:'Mc4', 10:'Mt4', 11:'Cr', 12:'Vl', 13:'Vcd', 14:'Mc2', 15:'Ta', 16:'Hem', 17:'I/1', 18:'Fa', 19:'Mt3', 20:'Vc', 21:'I1/', 22:'Mx', 23:'As', 24:'Pa', 25:'R', 26:'Es', 27:'Fa2', 28:'Fa3', 29:'Mt5', 30: nan, 31:'Mc5', 32:'Ct', 33:'Vs', 34:'Vt', 35:'Mc3', 36:'V', 37:'Das', 38:'Dai', 39:'Da', 40:'Esq', 41:'Esp', 42:'Lt1', 43:'L', 44:'In', 45:'Lt2', 46:'Pl', 47:'Mt', 48:'M3/', 49:'M1/', 50:'Hy', 51:'Com', 52:'Lt3', 53:'Mc', 54:'P2/', 55:'P4/-M1/', 56:'Art', 57:'M/1', 58:'Cc', 59:'PT', 60:'M2/', 61:'M/P', 62:'M/1-M/2', 63:'P4/', 64:'M3', 65:'M1/-M2/', 66:'P/2', 67:'Et', 68:'I', 69:'M/X', 70:'P/M', 71:'R/U', 72:'Co', 73:'P/4', 74:'P/3-P/4', 75:'Se', 76:'dp2/', 77:'P3/', 78:'M/x', 79:'P4/-P3/', 80:'M/3', 81:'PTPer8', 82:'PTPle', 83:'PTPL', 84:'P/3', 85:'M/', 86:'M/2', 87:'Epi', 88:'M', 89:'Fa1-V', 90:'Fa2-II', 91:'Fa2-IV', 92:'Carpal', 93:'I/C', 94:'T-Ta', 95:'Fi', 96:'Ta-Mt', 97:'Asta', 98:'Coprolito', 99:'I/3', 100:'I4', 101:'d/3', 102:'Mc2-3', 103:'I/2', 104:'Ca/Ta'}</label>
+<input type="text" class="form-control" id="at4" name="at4" placeholder="Insert value"></div>
+<label for="at5">Grupo anatomico: {0:'Mp', 1:'Ma', 2:'E', 3:'C', 4:'A', 5: nan, 6:'In', 7:'ES', 8:'Cr', 9:'PT', 10:'PTPL', 11:'PTPl'}</label>
+<input type="text" class="form-control" id="at5" name="at5" placeholder="Insert value"></div>
+<label for="at6">GRCA</label>
+<input type="text" class="form-control" id="at6" name="at6" placeholder="Insert value"></div>
+<label for="at7">Dientes</label>
+<input type="text" class="form-control" id="at7" name="at7" placeholder="Insert value"></div>
+<label for="at8">Fragmento de hueso</label>
+<input type="text" class="form-control" id="at8" name="at8" placeholder="Insert value"></div>
+<label for="at9">Longitud hueso largo</label>
+<input type="text" class="form-control" id="at9" name="at9" placeholder="Insert value"></div>
+<label for="at10">Circunferencia hueso largo</label>
+<input type="text" class="form-control" id="at10" name="at10" placeholder="Insert value"></div>
+<label for="at11">Longitud</label>
+<input type="text" class="form-control" id="at11" name="at11" placeholder="Insert value"></div>
+<label for="at12">Anchura</label>
+<input type="text" class="form-control" id="at12" name="at12" placeholder="Insert value"></div>
+<label for="at13">Espesor</label>
+<input type="text" class="form-control" id="at13" name="at13" placeholder="Insert value"></div>
+<label for="at14">Color 1: {0: nan, 1:'M', 2:'M/N', 3:'N', 4:'N/G', 5:'G', 6:'B', 7:'G/B', 8:'N/B', 9:'N-G', 10:'N-B', 11:'M/N/G', 12:'N/G/B', 13:'M/G'}</label>
+<input type="text" class="form-control" id="at14" name="at14" placeholder="Insert value"></div>
+<label for="at15">Color 2: {0: nan, 1:'N', 2:'M', 3:'M/N', 4:'N/G', 5:'G'}</label>
+<input type="text" class="form-control" id="at15" name="at15" placeholder="Insert value"></div>
+<label for="at16">Tajo</label>
+<input type="text" class="form-control" id="at16" name="at16" placeholder="Insert value"></div>
+<label for="at17">Furrowing</label>
+<input type="text" class="form-control" id="at17" name="at17" placeholder="Insert value"></div>
+<label for="at18">Meteorizacion</label>
+<input type="text" class="form-control" id="at18" name="at18" placeholder="Insert value"></div>
+<label for="at19">Erosion</label>
+<input type="text" class="form-control" id="at19" name="at19" placeholder="Insert value"></div>
+<label for="at20">Concrecion</label>
+<input type="text" class="form-control" id="at20" name="at20" placeholder="Insert value"></div>
+<label for="at21">Corrosion</label>
+<input type="text" class="form-control" id="at21" name="at21" placeholder="Insert value"></div>
+<label for="at22">Manganeso</label>
+<input type="text" class="form-control" id="at22" name="at22" placeholder="Insert value"></div>
+<label for="at23">Pisoteo</label>
+<input type="text" class="form-control" id="at23" name="at23" placeholder="Insert value"></div>
+<label for="at24">Presion</label>
+<input type="text" class="form-control" id="at24" name="at24" placeholder="Insert value"></div>
+<label for="at25">Roedores</label>
+<input type="text" class="form-control" id="at25" name="at25" placeholder="Insert value"></div>
+<label for="at26">Raices</label>
+<input type="text" class="form-control" id="at26" name="at26" placeholder="Insert value"></div>
+<label for="at27">Registro Diente</label>
+<input type="text" class="form-control" id="at27" name="at27" placeholder="Insert value"></div>
+<label for="at28">Fragmento.1</label>
+<input type="text" class="form-control" id="at28" name="at28" placeholder="Insert value"></div>
+<label for="at29">Longitud diente general</label>
+<input type="text" class="form-control" id="at29" name="at29" placeholder="Insert value"></div>
+<label for="at30">M 1</label>
+<input type="text" class="form-control" id="at30" name="at30" placeholder="Insert value"></div>
+<label for="at31">M 2</label>
+<input type="text" class="form-control" id="at31" name="at31" placeholder="Insert value"></div>
+<label for="at32">M 3</label>
+<input type="text" class="form-control" id="at32" name="at32" placeholder="Insert value"></div>
+<label for="at33">M 4</label>
+<input type="text" class="form-control" id="at33" name="at33" placeholder="Insert value"></div>
+<label for="at34">M 5</label>
+<input type="text" class="form-control" id="at34" name="at34" placeholder="Insert value"></div>
+<label for="at35">M 6</label>
+<input type="text" class="form-control" id="at35" name="at35" placeholder="Insert value"></div>
+<label for="at36">M 7</label>
+<input type="text" class="form-control" id="at36" name="at36" placeholder="Insert value"></div>
+<label for="at37">M 8</label>
+<input type="text" class="form-control" id="at37" name="at37" placeholder="Insert value"></div>
+<label for="at38">M 9</label>
+<input type="text" class="form-control" id="at38" name="at38" placeholder="Insert value"></div>
+<label for="at39">M 10</label>
+<input type="text" class="form-control" id="at39" name="at39" placeholder="Insert value"></div>
+<label for="at40">M 11</label>
+<input type="text" class="form-control" id="at40" name="at40" placeholder="Insert value"></div>
+<label for="at41">M 12</label>
+<input type="text" class="form-control" id="at41" name="at41" placeholder="Insert value"></div>
+<label for="at42">M 13</label>
+<input type="text" class="form-control" id="at42" name="at42" placeholder="Insert value"></div>
+<label for="at43">L dient eqsup</label>
+<input type="text" class="form-control" id="at43" name="at43" placeholder="Insert value"></div>
+<label for="at44">M1 L dient eqsup</label>
+<input type="text" class="form-control" id="at44" name="at44" placeholder="Insert value"></div>
+<label for="at45">M2 A dient sc eqsup</label>
+<input type="text" class="form-control" id="at45" name="at45" placeholder="Insert value"></div>
+<label for="at46">M3 L mesostilo eqsup</label>
+<input type="text" class="form-control" id="at46" name="at46" placeholder="Insert value"></div>
+<label for="at47">M4 L parastilo eqsup</label>
+<input type="text" class="form-control" id="at47" name="at47" placeholder="Insert value"></div>
+<label for="at48">M5 L protocono eqsup</label>
+<input type="text" class="form-control" id="at48" name="at48" placeholder="Insert value"></div>
+<label for="at49">M6 L mitad ant protocono eqsup</label>
+<input type="text" class="form-control" id="at49" name="at49" placeholder="Insert value"></div>
+<label for="at50">M7 L mitad post protocono eqsup</label>
+<input type="text" class="form-control" id="at50" name="at50" placeholder="Insert value"></div>
+<label for="at51">M8 A Istme eqsup</label>
+<input type="text" class="form-control" id="at51" name="at51" placeholder="Insert value"></div>
+<label for="at52">M9 A post protocon eqsup</label>
+<input type="text" class="form-control" id="at52" name="at52" placeholder="Insert value"></div>
+<label for="at53">M10 Dist hipocono post protocono eqsup</label>
+<input type="text" class="form-control" id="at53" name="at53" placeholder="Insert value"></div>
+<label for="at54">M11 L plec cavalli eqsup</label>
+<input type="text" class="form-control" id="at54" name="at54" placeholder="Insert value"></div>
+<label for="at55">M12 L fosa lunata ant eqsup</label>
+<input type="text" class="form-control" id="at55" name="at55" placeholder="Insert value"></div>
+<label for="at56">M13 L fosa lunata post eqsup</label>
+<input type="text" class="form-control" id="at56" name="at56" placeholder="Insert value"></div>
+<label for="at57">M14 A embocadura entrant ant eqsup</label>
+<input type="text" class="form-control" id="at57" name="at57" placeholder="Insert value"></div>
+<label for="at58">L dent punt P eqsup</label>
+<input type="text" class="form-control" id="at58" name="at58" placeholder="Insert value"></div>
+<label for="at59">A dent punt P eqsup</label>
+<input type="text" class="form-control" id="at59" name="at59" placeholder="Insert value"></div>
+<label for="at60">L protocon punt P eqsup</label>
+<input type="text" class="form-control" id="at60" name="at60" placeholder="Insert value"></div>
+<label for="at61">H divergencia-mesostilo eqsup</label>
+<input type="text" class="form-control" id="at61" name="at61" placeholder="Insert value"></div>
+<label for="at62">M1 L diente eqinf</label>
+<input type="text" class="form-control" id="at62" name="at62" placeholder="Insert value"></div>
+<label for="at63">M2 A dient eqinf</label>
+<input type="text" class="form-control" id="at63" name="at63" placeholder="Insert value"></div>
+<label for="at64">M3 A dient sc eqinf</label>
+<input type="text" class="form-control" id="at64" name="at64" placeholder="Insert value"></div>
+<label for="at65">M4 L doble lazo eqinf</label>
+<input type="text" class="form-control" id="at65" name="at65" placeholder="Insert value"></div>
+<label for="at66">M6 L talónido eqinf</label>
+<input type="text" class="form-control" id="at66" name="at66" placeholder="Insert value"></div>
+<label for="at67">M8 L vall ext eqinf</label>
+<input type="text" class="form-control" id="at67" name="at67" placeholder="Insert value"></div>
+<label for="at68">M9 A Istme eqinf</label>
+<input type="text" class="form-control" id="at68" name="at68" placeholder="Insert value"></div>
+<label for="at69">M10 L pliego pticostilido eqinf</label>
+<input type="text" class="form-control" id="at69" name="at69" placeholder="Insert value"></div>
+<label for="at70">M11 L post fléxido eqinf</label>
+<input type="text" class="form-control" id="at70" name="at70" placeholder="Insert value"></div>
+<label for="at71">L dient punt P eqinf</label>
+<input type="text" class="form-control" id="at71" name="at71" placeholder="Insert value"></div>
+<label for="at72">H divergencia.proto.hipoc</label>
+<input type="text" class="form-control" id="at72" name="at72" placeholder="Insert value"></div>
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+</p> 
+</div>
