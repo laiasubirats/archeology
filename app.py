@@ -134,6 +134,7 @@ if __name__ == "__main__":
 # Prepare the dataset
 data_frame = pd.read_excel('data.xlsx')
 #SC
+import numpy as np
 data_frame = data_frame.replace('-', np.NaN)
 print("******",data_frame.columns)
 #data_frame = data_frame.drop(['Fecha', 'Registro', 'Registro Diente', 'Dientes'], axis=1)
