@@ -162,6 +162,7 @@ label_familia_matrix = le_familia.fit_transform(labels_familia)
 le_artiodactyla = preprocessing.LabelEncoder()
 label_artiodactyla_matrix = le_artiodactyla.fit_transform(labels_artiodactyla)
 # Debug purpose
+import collections
 print(sorted(collections.Counter(labels_familia).items()))
 print(np.unique(label_familia_matrix), np.unique(labels_familia))
 
