@@ -217,14 +217,14 @@ rf_pipeline = Pipeline([
 # Set the parameters by cross-validation
 #'min_samples_leaf': [1,5,10,50,100,200,500],
 
-tuned_parameters = {
-    'classifier__n_estimators': [500],
-    'classifier__max_features': ['auto'],
-    'classifier__class_weight':[None]
-}
+#tuned_parameters = {
+#    'classifier__n_estimators': [500],
+#    'classifier__max_features': ['auto'],
+#    'classifier__class_weight':[None]
+#}
 #{'classifier__max_features': 'auto', 'classifier__class_weight': None, 'classifier__n_estimators': 700
-#tuned_parameters = {  
-#    }  
+tuned_parameters = {  
+    }  
 
 #scores = ['precision', 'recall', 'f1']
 #scores = [ 'f1_weighted','f1_micro','f1_macro','accuracy','roc_auc']
@@ -233,9 +233,9 @@ scores=['f1_macro']
 for score in scores:
     print("# Tuning hyper-parameters for %s" % score)
     print()
-    #clf = GridSearchCV(GaussianNB(), tuned_parameters, cv=10,scoring='%s_macro' % score)
+    clf = GridSearchCV(GaussianNB(), tuned_parameters, cv=10,scoring='%s_macro' % score)
     #clf = GridSearchCV(estimator=rfc, param_grid=tuned_parameters, cv=5,scoring='%s_weighted' % score,n_jobs= -1)
-    clf = GridSearchCV(estimator=rf_pipeline , param_grid=tuned_parameters, cv=10,scoring='%s' % score,n_jobs= -1)
+    #clf = GridSearchCV(estimator=rf_pipeline , param_grid=tuned_parameters, cv=10,scoring='%s' % score,n_jobs= -1)
     clf.fit(X_train_familia_aux, y_train_familia_aux)    
 print("Finaaaaaal")    
 app.run(debug=False,port=5000)
