@@ -68,28 +68,27 @@ class ReusableForm(Form):
         return render_template('hello.html', form=form)
  
 if __name__ == "__main__":
-    print("Inicio")
-    import pandas as pd
-    import numpy as np
-    import collections
-    import matplotlib.pyplot as plt
-    import itertools
+print("Inicio")
+import pandas as pd
+import numpy as np
+import collections
+import matplotlib.pyplot as plt
+import itertools
 
 
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import KFold
-    from sklearn.metrics import confusion_matrix
-    from sklearn import preprocessing
-    from sklearn.metrics import classification_report
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.model_selection import cross_val_score
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold
+from sklearn.metrics import confusion_matrix
+from sklearn import preprocessing
+from sklearn.metrics import classification_report
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+from imblearn.over_sampling import SMOTE
+import scipy.io as sio
 
-    from imblearn.over_sampling import SMOTE
-    import scipy.io as sio
-
-    param_grid_tree = {"max_depth": [3, None],
+param_grid_tree = {"max_depth": [3, None],
                    "max_features": [1, 3, 10],
                    "min_samples_split": [2, 3, 10],
                    "min_samples_leaf": [1, 3, 10],
@@ -98,14 +97,14 @@ if __name__ == "__main__":
 
     param_grid = {'C': [1, 10, 100, 1000], 'gamma': [0.001, 0.0001], 'kernel': ['rbf']}
 
-    def svc_param_selection(X, y, nfolds):
-        Cs = [0.001, 0.01, 0.1, 1, 10]
-        gammas = [0.001, 0.01, 0.1, 1]
-        param_grid = {'C': Cs, 'gamma' : gammas}
-        grid_search = GridSearchCV(SVC(), param_grid, cv=nfolds)
-        grid_search.fit(X, y)
-        grid_search.best_params_
-        return grid_search.best_params_
+def svc_param_selection(X, y, nfolds):
+    Cs = [0.001, 0.01, 0.1, 1, 10]
+    gammas = [0.001, 0.01, 0.1, 1]
+    param_grid = {'C': Cs, 'gamma' : gammas}
+    grid_search = GridSearchCV(SVC(), param_grid, cv=nfolds)
+    grid_search.fit(X, y)
+    grid_search.best_params_
+    return grid_search.best_params_
 
     
 
