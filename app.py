@@ -35,6 +35,7 @@ class ReusableForm(Form):
                 i=i+1
             print(name)
             print(surname)
+            import pandas as pd
             toprint=pd.DataFrame(data=unarray)
             toprint=toprint.append([name])
             toprint=toprint.append([surname])
