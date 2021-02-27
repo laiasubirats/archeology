@@ -8,4 +8,3 @@ gunicorn==20.0.4
 scipy==1.5.0
 pandas==1.0.5
 matplotlib==3.2.2
-rails==3.2.7
