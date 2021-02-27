@@ -156,6 +156,7 @@ mask_artiodactyla = np.isin(labels_familia, artiodactyla)
 labels_artiodactyla = labels_familia[mask_artiodactyla]
 
 # Generate label matrix
+from sklearn import preprocessing
 le_familia = preprocessing.LabelEncoder()
 label_familia_matrix = le_familia.fit_transform(labels_familia)
 le_artiodactyla = preprocessing.LabelEncoder()
