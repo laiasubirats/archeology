@@ -237,8 +237,9 @@ for score in scores:
     #clf = GridSearchCV(estimator=rfc, param_grid=tuned_parameters, cv=5,scoring='%s_weighted' % score,n_jobs= -1)
     #clf = GridSearchCV(estimator=rf_pipeline , param_grid=tuned_parameters, cv=10,scoring='%s' % score,n_jobs= -1)
     clf.fit(X_train_familia_aux, y_train_familia_aux)    
-print("Finaaaaaal")    
-app.run(debug=False)
+print("Finaaaaaal")  
+app.run(threaded=True, port=5000)  
+#app.run(debug=False)
 #app.run(host= '172.0.0.1', port=5000, debug=False)
 
 
