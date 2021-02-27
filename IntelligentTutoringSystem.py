@@ -50,13 +50,13 @@ class ReusableForm(Form):
             toprint=toprint.append([finalprediction[prediction[0]]])
             import os
             import sys
-            file_dir = os.path.abspath(os.path.dirname(sys.argv[0]) or '.')
+            #file_dir = os.path.abspath(os.path.dirname(sys.argv[0]) or '.')
             #file_path = os.path.join(file_dir,'Students', str(datetime.datetime.now())+'.csv')
-            file_path = os.path.join("Documents/archeology/Students/",str(datetime.datetime.now()))
-            file_path=file_path.replace(" ","_").replace(":","_").replace("-","_").replace(".","_")
-            file_path="C://Users/laia.subirats/"+file_path+".csv"
-            print(file_path)
-            resultCSV=toprint.to_csv(file_path,index=False)
+            #file_path = os.path.join("Documents/archeology/Students/",str(datetime.datetime.now()))
+            #file_path=file_path.replace(" ","_").replace(":","_").replace("-","_").replace(".","_")
+            #file_path="C://Users/laia.subirats/"+file_path+".csv"
+            #print(file_path)
+            #resultCSV=toprint.to_csv(file_path,index=False)
             
             surname=surname +". Your prediction is: "+str(finalprediction[prediction[0]])+ ".\n" 
             
