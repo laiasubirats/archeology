@@ -233,7 +233,7 @@ from sklearn.naive_bayes import GaussianNB
 for score in scores:
     print("# Tuning hyper-parameters for %s" % score)
     print()
-    clf = GridSearchCV(GaussianNB(), tuned_parameters, cv=10,scoring='%s_macro' % score)
+    clf = GridSearchCV(GaussianNB(), tuned_parameters, cv=10,scoring='%s' % score)
     #clf = GridSearchCV(estimator=rfc, param_grid=tuned_parameters, cv=5,scoring='%s_weighted' % score,n_jobs= -1)
     #clf = GridSearchCV(estimator=rf_pipeline , param_grid=tuned_parameters, cv=10,scoring='%s' % score,n_jobs= -1)
     clf.fit(X_train_familia_aux, y_train_familia_aux)    
