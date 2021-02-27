@@ -109,11 +109,6 @@ if __name__ == "__main__":
 
     
 
-
-    def invert_dict(d):
-        return dict([(v, k) for k, v in d.items()])
-
-
 # Utility function to report best scores
     def report(results, n_top=3):
         for i in range(1, n_top + 1):
@@ -139,7 +134,7 @@ for column in columns_name:
     print(data_frame[column])
     dict_column_aux = dict(enumerate(data_frame[column].unique()))
     print(dict_column_aux)
-    dict_column = invert_dict(dict_column_aux)
+    dict_column = dict([(v, k) for k, v in dict_column_aux.items()])
     data_frame[column].replace(dict_column, inplace=True)
 
 # Dataset just with numerical columns
