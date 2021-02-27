@@ -175,6 +175,7 @@ train_val_artiodactyla_matrix = train_val_artiodactyla_df.to_numpy()
 print(np.shape(train_val_artiodactyla_matrix))
 
 # Generate train and validation dataset for the main classifier
+from sklearn.model_selection import train_test_split
 X_train_familia_aux, X_test_familia_aux, y_train_familia_aux, y_test_familia_aux = train_test_split(train_val_familia_matrix,
                                                                                                 label_familia_matrix,
                                                                                                 test_size=0.33,
