@@ -229,7 +229,7 @@ tuned_parameters = {
 #scores = ['precision', 'recall', 'f1']
 #scores = [ 'f1_weighted','f1_micro','f1_macro','accuracy','roc_auc']
 scores=['f1_macro']
-
+from sklearn.naive_bayes import GaussianNB
 for score in scores:
     print("# Tuning hyper-parameters for %s" % score)
     print()
