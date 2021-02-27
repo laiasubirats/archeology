@@ -107,13 +107,7 @@ if __name__ == "__main__":
         grid_search.best_params_
         return grid_search.best_params_
 
-    def column_to_int(columns_name, data_frame):
-        for column in columns_name:
-            print(data_frame[column])
-            dict_column_aux = dict(enumerate(data_frame[column].unique()))
-            print(dict_column_aux)
-            dict_column = invert_dict(dict_column_aux)
-            data_frame[column].replace(dict_column, inplace=True)
+    
 
 
     def invert_dict(d):
@@ -139,6 +133,13 @@ data_frame = data_frame.replace('-', np.NaN)
 print("******",data_frame.columns)
 #data_frame = data_frame.drop(['Fecha', 'Registro', 'Registro Diente', 'Dientes'], axis=1)
 data_frame = data_frame.drop(['Fecha', 'Registro'], axis=1)
+def column_to_int(columns_name, data_frame):
+        for column in columns_name:
+            print(data_frame[column])
+            dict_column_aux = dict(enumerate(data_frame[column].unique()))
+            print(dict_column_aux)
+            dict_column = invert_dict(dict_column_aux)
+            data_frame[column].replace(dict_column, inplace=True)
 column_to_int(["Hueso", "Grupo anatomico", "Color 1", "Color 2"], data_frame)
 
 # Dataset just with numerical columns
